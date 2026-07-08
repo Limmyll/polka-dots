@@ -1,0 +1,67 @@
+/**
+ * loading.css — 计算等待页样式（软粉多巴胺）
+ */
+
+#screen-loading {
+  background:
+    radial-gradient(ellipse at center, #FFF0F3 0%, #FFEBF0 70%);
+}
+
+.loading-container {
+  text-align: center;
+}
+
+/* ─── 波点 loading 动画（粉紫多色弹跳） ─── */
+.loading-dots {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+
+.loading-dots span {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  animation: dotBouncePink 1.3s ease-in-out infinite;
+}
+
+.loading-dots span:nth-child(1) { animation-delay: 0s;    background: #FFDEE9; box-shadow: 0 0 12px rgba(255,164,188,0.4); }
+.loading-dots span:nth-child(2) { animation-delay: 0.15s; background: #FFB6C1; box-shadow: 0 0 12px rgba(255,105,180,0.4); }
+.loading-dots span:nth-child(3) { animation-delay: 0.3s;  background: #FF69B4; box-shadow: 0 0 12px rgba(255,105,180,0.45); }
+.loading-dots span:nth-child(4) { animation-delay: 0.45s; background: #DDA0DD; box-shadow: 0 0 12px rgba(221,160,221,0.4); }
+.loading-dots span:nth-child(5) { animation-delay: 0.6s;  background: #BF5FFF; box-shadow: 0 0 12px rgba(191,95,255,0.4); }
+
+@keyframes dotBouncePink {
+  0%, 80%, 100% {
+    transform: scale(0.5);
+    opacity: 0.35;
+  }
+  40% {
+    transform: scale(1.35);
+    opacity: 1;
+  }
+}
+
+/* ─── 文本 ─── */
+.loading-text {
+  font-size: 16px;
+  color: #D4687C;
+  letter-spacing: 1.5px;
+  font-weight: 400;
+}
+
+.loading-ellipsis {
+  display: inline-block;
+  animation: ellipsis 1.5s steps(4, end) infinite;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+@keyframes ellipsis {
+  0%   { width: 0ch; }
+  25%  { width: 1ch; }
+  50%  { width: 2ch; }
+  75%  { width: 3ch; }
+  100% { width: 0ch; }
+}

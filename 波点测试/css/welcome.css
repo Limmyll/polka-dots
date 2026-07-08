@@ -1,0 +1,87 @@
+/**
+ * welcome.css — 欢迎页样式（甜酷多巴胺 + 复古未来感）
+ */
+
+#screen-welcome {
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(255,154,180,0.10) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 80%, rgba(255,105,180,0.06) 0%, transparent 50%),
+    linear-gradient(180deg, #FFEBF0 0%, #FFF0F3 100%);
+}
+
+/* ─── 欢迎页专属波点装饰叠加（更柔和的粉色交错层，大间距松弛感） ─── */
+.welcome-bg-dots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at center, rgba(255,164,188,0.25) 5px, transparent 5px),
+    radial-gradient(circle at center, rgba(255,105,180,0.12) 4.5px, transparent 4.5px);
+  background-size: 60px 60px, 60px 60px;
+  background-position: 0 0, 30px 30px;
+  animation: bgDotsFloat 28s linear infinite;
+}
+
+@keyframes bgDotsFloat {
+  0%   { background-position: 0 0, 30px 30px; }
+  100% { background-position: 60px 60px, 90px 90px; }
+}
+
+.welcome-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 32px;
+}
+
+/* ─── 标题区 ─── */
+.welcome-title {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.welcome-title__sub {
+  font-size: 10px;
+  letter-spacing: 5px;
+  color: rgba(255,105,180,0.5);
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.welcome-title__main {
+  font-size: 52px;
+  font-weight: 900;
+  line-height: 1.15;
+  background: linear-gradient(
+    135deg,
+    #FFA4BC 0%,
+    #FF69B4 25%,
+    #E8468A 50%,
+    #FF8FA3 75%,
+    #D4687C 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 10px rgba(255,105,180,0.2));
+}
+
+.welcome-title__desc {
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--color-text-light);
+  letter-spacing: 3px;
+  opacity: 0.85;
+}
+
+.welcome-tagline {
+  font-size: 14px;
+  color: rgba(180,120,140,0.6);
+  margin-bottom: 56px;
+  line-height: 1.7;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
